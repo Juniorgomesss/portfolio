@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         navLinks.forEach(link => {
-          link.style.color = 'var(--muted)';
+          link.classList.remove('active');
           if (link.getAttribute('href') === `#${sectionId}`) {
-            link.style.color = 'var(--text)';
+            link.classList.add('active');
           }
         });
       }
