@@ -696,6 +696,17 @@
       animation: fadeUp .6s .4s ease both;
     }
 
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
       nav {
