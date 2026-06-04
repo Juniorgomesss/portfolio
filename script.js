@@ -29,10 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const nav = document.querySelector('nav');
+  const handleScroll = () => {
+    changeActiveLink();
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  };
+
   // Executa no scroll
-  window.addEventListener('scroll', changeActiveLink);
+  window.addEventListener('scroll', handleScroll);
   // Executa uma vez no início
-  changeActiveLink();
+  handleScroll();
 
   // --- Scroll Reveal Animation ---
   const reveals = document.querySelectorAll('.reveal');
