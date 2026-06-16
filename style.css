@@ -30,9 +30,9 @@
 
     /* Ubuntu Yaru Light Mode */
     body.light-mode {
-      --bg: #f6f5f4;
-      --bg2: #ffffff;
-      --bg3: #fffbf0;
+      --bg: #E2E0DD;
+      --bg2: #EEEDEB;
+      --bg3: #EEEDEB;
       --line: rgba(0, 0, 0, 0.08);
       --line2: rgba(0, 0, 0, 0.15);
       --text: #333333;
@@ -470,7 +470,9 @@
     }
 
     @media (hover: none) {
-      .project-thumb { filter: saturate(1) brightness(1); }
+      .project-thumb {
+        filter: saturate(1) brightness(1);
+      }
     }
 
     .project-info {
@@ -847,7 +849,7 @@
     .back-to-top:hover {
       transform: translateY(-3px) scale(1.05);
     }
-    
+
     .back-to-top svg {
       width: 20px;
       height: 20px;
@@ -859,7 +861,8 @@
         top: 1.25rem !important;
         left: auto !important;
         right: 1.25rem !important;
-        width: calc(100% - 110px) !important; /* Total gap: 20px(L) + 60px(bola) + 10px(gap) + 20px(R) = 110px */
+        width: calc(100% - 110px) !important;
+        /* Total gap: 20px(L) + 60px(bola) + 10px(gap) + 20px(R) = 110px */
         height: 60px !important;
         padding: 0 1.5rem !important;
         background: rgba(37, 37, 37, 0.85) !important;
@@ -880,7 +883,8 @@
         display: flex;
         position: absolute;
         top: 50%;
-        left: -70px; /* Posiciona a bola 70px para a esquerda do nav (60px da bola + 10px de gap) */
+        left: -70px;
+        /* Posiciona a bola 70px para a esquerda do nav (60px da bola + 10px de gap) */
         transform: translateY(-50%);
         width: 60px;
         height: 60px;
@@ -889,7 +893,7 @@
         backdrop-filter: blur(18px) saturate(1.4);
         -webkit-backdrop-filter: blur(18px) saturate(1.4);
         border: 1px solid var(--line2);
-        color: #ffffff;
+        color: #E2E0DD;
         z-index: 101;
         align-items: center;
         justify-content: center;
@@ -917,7 +921,7 @@
         gap: 1.5rem;
         border: 1px solid var(--line2);
         border-radius: var(--r2);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
@@ -927,7 +931,7 @@
 
       body.light-mode .nav-links {
         background: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
       }
 
       .nav-links.active {
@@ -952,7 +956,7 @@
         order: -1;
         margin-bottom: 2rem;
       }
-      
+
       .about-photo {
         max-width: 300px;
         margin: 0 auto;
