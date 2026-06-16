@@ -8,57 +8,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Theme Toggle ---
   const themeToggle = document.getElementById('theme-toggle');
-  const htmlElement = document.documentElement;
-
-  // Verifica a preferência salva no localStorage
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-mode');
-  }
-
+  
   // Alterna o tema
   themeToggle.addEventListener('click', () => {
     const isLightMode = document.body.classList.toggle('light-mode');
     localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
   });
 
-  // --- Active Nav Link on Scroll ---
+  // --- Menu Mobile ---
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const navLinksContainer = document.querySelector('.nav-links');
+  const navLinksItems = document.querySelectorAll('.nav-links a');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    navLinksContainer.classList.toggle('active');
+    mobileMenuBtn.classList.toggle('active');
+  });
+
+  // Fecha o menu ao clicar em um link
+  navLinksItems.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinksContainer.classList.remove('active');
+      mobileMenuBtn.classList.remove('active');
+    });
+  });
+
+  // --- Scroll Spy with IntersectionObserver ---
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
 
-  const changeActiveLink = () => {
-    let scrollPosition = window.scrollY + 100; // offset para ajustar detecção
+  const spyOptions = {
+    root: null,
+    rootMargin: '-50% 0px -50% 0px',
+    threshold: 0
+  };
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
         navLinks.forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
+          if (link.getAttribute('href') === `#${id}`) {
             link.classList.add('active');
           }
         });
       }
     });
-  };
+  }, spyOptions);
 
+  sections.forEach(section => spyObserver.observe(section));
+
+  // --- Nav Scrolled & Back to Top (Throttled) ---
   const nav = document.querySelector('nav');
+  const backToTopBtn = document.getElementById('back-to-top');
+  let isScrolling = false;
+
   const handleScroll = () => {
-    changeActiveLink();
     if (window.scrollY > 50) {
       nav.classList.add('scrolled');
+      backToTopBtn.classList.add('visible');
     } else {
       nav.classList.remove('scrolled');
+      backToTopBtn.classList.remove('visible');
     }
+    isScrolling = false;
   };
 
-  // Executa no scroll
-  window.addEventListener('scroll', handleScroll);
-  // Executa uma vez no início
-  handleScroll();
+  window.addEventListener('scroll', () => {
+    if (!isScrolling) {
+      window.requestAnimationFrame(handleScroll);
+      isScrolling = true;
+    }
+  });
+  handleScroll(); // Init
+
+  // --- Back to Top Click ---
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   // --- Scroll Reveal Animation ---
   const reveals = document.querySelectorAll('.reveal');
@@ -76,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, revealOptions);
 
-  reveals.forEach(reveal => {
-    revealOnScroll.observe(reveal);
-  });
+  reveals.forEach(reveal => revealOnScroll.observe(reveal));
 });
+
