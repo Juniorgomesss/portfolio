@@ -6,6 +6,22 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('✨ Portfólio de Júnior Silva carregado com sucesso!');
 
+  // --- Theme Toggle ---
+  const themeToggle = document.getElementById('theme-toggle');
+  const htmlElement = document.documentElement;
+
+  // Verifica a preferência salva no localStorage
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+  }
+
+  // Alterna o tema
+  themeToggle.addEventListener('click', () => {
+    const isLightMode = document.body.classList.toggle('light-mode');
+    localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+  });
+
   // --- Active Nav Link on Scroll ---
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');

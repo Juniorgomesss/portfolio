@@ -7,6 +7,7 @@
     }
 
     :root {
+      /* Ubuntu Yaru Dark (Default) */
       --bg: #252525;
       --bg2: #1d1d1d;
       --bg3: #1a1c21;
@@ -14,13 +15,28 @@
       --line2: rgba(255, 255, 255, 0.13);
       --text: #dfdfdf;
       --muted: #a0a0a0;
-      --accent: #22d4fd;
-      --accent-dim: rgba(34, 212, 253, 0.12);
-      --accent-mid: rgba(34, 212, 253, 0.4);
-      --serif: 'Krona One', sans-serif;
-      --sans: 'Montserrat', system-ui, sans-serif;
+      --accent: #dd4814;
+      --accent-dim: rgba(221, 72, 20, 0.12);
+      --accent-mid: rgba(221, 72, 20, 0.25);
+      --ubuntu-orange: #dd4814;
+      --ubuntu-red: #c1292e;
+      --ubuntu-purple: #77216f;
+      --ubuntu-warmgrey: #aaa9a7;
+      --serif: 'Ubuntu', 'Krona One', sans-serif;
+      --sans: 'Ubuntu', 'Montserrat', system-ui, sans-serif;
       --r: 8px;
       --r2: 16px;
+    }
+
+    /* Ubuntu Yaru Light Mode */
+    body.light-mode {
+      --bg: #f6f5f4;
+      --bg2: #ffffff;
+      --bg3: #fffbf0;
+      --line: rgba(0, 0, 0, 0.08);
+      --line2: rgba(0, 0, 0, 0.15);
+      --text: #333333;
+      --muted: #999999;
     }
 
     html {
@@ -47,7 +63,7 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 9999;
-      opacity: .03;
+      opacity: .01;
     }
 
     /* ─── GRID LINES ─── */
@@ -61,6 +77,7 @@
       background-size: 60px 60px;
       pointer-events: none;
       z-index: 0;
+      opacity: 0.3;
     }
 
     /* ─── NAV ─── */
@@ -80,7 +97,7 @@
       border-radius: 0;
       backdrop-filter: blur(18px) saturate(1.4);
       -webkit-backdrop-filter: blur(18px) saturate(1.4);
-      background: rgba(11, 12, 14, 0.2);
+      background: rgba(37, 37, 37, 0.3);
       transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: width, height, top, background-color, border-radius;
     }
@@ -90,12 +107,21 @@
       width: calc(100% - 2.5rem);
       max-width: 1000px;
       height: 64px;
-      background: rgba(37, 37, 37, 0.85); /* Fundo um pouco mais claro como na imagem */
+      background: rgba(37, 37, 37, 0.85);
       border: 1px solid var(--line2);
       border-radius: 100px;
       padding: 0 2rem;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
       transform: translateX(-50%) translateZ(0);
+    }
+
+    body.light-mode nav {
+      background: rgba(246, 245, 244, 0.5);
+    }
+
+    body.light-mode nav.scrolled {
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     }
 
     .nav-logo {
@@ -151,7 +177,7 @@
 
     .nav-cta {
       background: var(--accent);
-      color: #0b0c0e !important;
+      color: #ffffff !important;
       padding: .45rem 1.1rem;
       border-radius: var(--r);
       font-size: 0.8rem !important;
@@ -167,6 +193,57 @@
 
     .nav-cta::after {
       display: none !important;
+    }
+
+    /* ─── THEME TOGGLE ─── */
+    .theme-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: background-color .25s;
+      padding: 0;
+    }
+
+    .theme-toggle:hover {
+      background-color: var(--accent-dim);
+    }
+
+    .theme-icon {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: opacity .25s, transform .25s;
+      position: absolute;
+    }
+
+    .theme-icon.dark {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+
+    .theme-icon.light {
+      opacity: 0;
+      transform: rotate(-45deg) scale(0.8);
+    }
+
+    body.light-mode .theme-icon.dark {
+      opacity: 0;
+      transform: rotate(45deg) scale(0.8);
+    }
+
+    body.light-mode .theme-icon.light {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
     }
 
     /* ─── HERO ─── */
@@ -235,7 +312,7 @@
 
     .btn-primary {
       background: var(--accent);
-      color: #0b0c0e;
+      color: #ffffff;
       padding: .75rem 1.75rem;
       border-radius: var(--r);
       font-size: .875rem;
