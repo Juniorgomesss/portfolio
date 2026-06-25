@@ -618,6 +618,7 @@
       filter: saturate(0.8);
       aspect-ratio: 3/4;
       object-fit: cover;
+      object-position: top;
     }
 
     .about-tag-photo {
