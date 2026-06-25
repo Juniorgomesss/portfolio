@@ -4,54 +4,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Sites e landing pages que convertem. Design, código e deploy — tudo em um só profissional. Conheça os projetos de Júnior Silva.">
+  <meta name="theme-color" content="#dd4814">
+  <meta name="google-site-verification" content="">
+  <meta name="description" content="Sites e landing pages que convertem. Design, código e deploy — tudo em um só profissional. Conheça os projetos de Júnior Silva.">
+  <meta name="keywords" content="designer, front-end, landing page, ux-ui, portfólio, web design">
+  <meta name="author" content="Júnior Silva">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://portfolio-livid-gamma-fvsa9m5si3.vercel.app/">
+  
+  <!-- Open Graph -->
   <meta property="og:title" content="Júnior Silva — Sites & Landing Pages que Convertem">
-  <meta property="og:description"
-    content="Sites e landing pages que convertem. Design, código e deploy — tudo em um só profissional.">
+  <meta property="og:description" content="Sites e landing pages que convertem. Design, código e deploy — tudo em um só profissional.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://juniorgomesss.github.io/portf-lio/">
-  <meta property="og:image" content="https://juniorgomesss.github.io/portf-lio/assets/foto-junior.png">
+  <meta property="og:url" content="https://portfolio-livid-gamma-fvsa9m5si3.vercel.app/">
+  <meta property="og:image" content="https://portfolio-livid-gamma-fvsa9m5si3.vercel.app/assets/foto-junior.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Júnior Silva — Sites & Landing Pages que Convertem">
+  <meta name="twitter:description" content="Designer & Front-end Developer. Crio sites responsivos com resultado.">
+  <meta name="twitter:image" content="https://portfolio-livid-gamma-fvsa9m5si3.vercel.app/assets/foto-junior.png">
+
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <title>Júnior Silva — Sites & Landing Pages que Convertem</title>
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+
+  <!-- Fonts with Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Krona+One&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Krona+One&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Krona+One&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.min.css">
+
+  <!-- Scripts -->
+  <script src="script.min.js" defer></script>
+
+  <!-- Title -->
+  <title>Júnior Silva — Sites & Landing Pages que Convertem</title>
 </head>
 
 <body>
+  <!-- Theme Persistence Script (non-render blocking) -->
   <script>
-    if (localStorage.getItem('theme') === 'light') {
+    if (localStorage && localStorage.getItem('theme') === 'light') {
       document.body.classList.add('light-mode');
     }
   </script>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#home" class="nav-logo">jr<span>.</span></a>
+  <!-- Skip to Content Link (Accessibility) -->
+  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
 
-    <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menu">
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
-        fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- NAV -->
+  <nav role="navigation" aria-label="Navegação principal">
+    <a href="#home" class="nav-logo" aria-label="Júnior Silva - Ir para home">jr<span>.</span></a>
+
+    <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <line x1="3" y1="12" x2="21" y2="12"></line>
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="18" x2="21" y2="18"></line>
       </svg>
     </button>
 
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="https://wa.me/5547999632936" target="_blank" rel="noopener noreferrer"
-          class="nav-cta">Fale comigo</a></li>
+    <ul class="nav-links" id="nav-menu" role="menubar">
+      <li role="none"><a href="#home" role="menuitem">Home</a></li>
+      <li role="none"><a href="#projetos" role="menuitem">Projetos</a></li>
+      <li role="none"><a href="#sobre" role="menuitem">Sobre</a></li>
+      <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+      <li role="none"><a href="https://wa.me/5547999632936" target="_blank" rel="noopener noreferrer" class="nav-cta" role="menuitem">Fale comigo</a></li>
     </ul>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+    
+    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar entre modo claro e escuro">
       <svg class="theme-icon dark" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
       </svg>
@@ -69,348 +97,353 @@
     </button>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero reveal" id="home">
-    <span class="hero-tag">Designer & Desenvolvedor Front-end</span>
-    <h1>Seu próximo site, do <em>design</em> ao deploy.</h1>
-    <p class="hero-sub">
-      Crio sites e landing pages que convertem visitantes em clientes. Do Figma ao código — rápido, responsivo e pronto
-      para ir ao ar.
-    </p>
-    <div class="hero-actions">
-      <a href="#projetos" class="btn-primary">Ver projetos</a>
-      <a href="https://wa.me/5547999632936" target="_blank" rel="noopener noreferrer" class="btn-ghost">Solicitar orçamento</a>
-    </div>
-
-    <div class="social-row">
-      <a href="https://github.com/Juniorgomesss" target="_blank" rel="noopener noreferrer" class="social-link"
-        aria-label="Acessar GitHub">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0C17 5.8 18 6.1 18 6.1c.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.3v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3" />
-        </svg>
-        GitHub
-      </a>
-      <a href="https://www.linkedin.com/in/juniorgomesdasilva/" target="_blank" rel="noopener noreferrer"
-        class="social-link" aria-label="Acessar LinkedIn">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-        </svg>
-        LinkedIn
-      </a>
-      <a href="https://www.behance.net/juniorgomess" target="_blank" rel="noopener noreferrer" class="social-link"
-        aria-label="Acessar Behance">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.726-3h3.427c-.123-1.979-1.141-2.848-1.772-2.848-.68 0-1.54.497-1.655 2.848zm-6.688 6.824h-6.312v-14h6.038c2.531 0 4.626 1.081 4.626 3.754 0 1.12-.95 2.138-2.026 2.524v.055c1.339.218 2.963 1.168 2.963 3.292 0 3.142-2.731 4.375-5.289 4.375zm-1.937-9.765h-2.481v2.613h2.505c1.235 0 1.663-.543 1.663-1.334 0-.847-.518-1.279-1.687-1.279zm-.147 4.773h-2.334v2.92h2.405c1.397 0 2.047-.63 2.047-1.509 0-.977-.709-1.411-2.118-1.411z" />
-        </svg>
-        Behance
-      </a>
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- PROJECTS -->
-  <section class="section reveal" id="projetos">
-    <div class="section-header">
-      <span class="section-num">01 —</span>
-      <h2 class="section-title">Projetos selecionados</h2>
-    </div>
-
-    <div class="project-tabs">
-      <button class="tab-btn active" data-filter="all">Todos</button>
-      <button class="tab-btn" data-filter="ux-ui">UX/UI</button>
-      <button class="tab-btn" data-filter="sites">LP's / Sites</button>
-      <button class="tab-btn" data-filter="github">Git Hub</button>
-    </div>
-
-    <div class="projects-grid">
-
-      <a href="https://lumina-estetica-jet.vercel.app/" target="_blank"
-        rel="noopener noreferrer" class="project-card" data-category="sites">
-        <img src="assets/lumina_estetica.png" alt="Lumina Estética — Landing Page" class="project-thumb" loading="lazy">
-        <div class="project-info">
-          <span class="project-tag">Landing Page · Estética</span>
-          <h3 class="project-name">Lumina Estética</h3>
-          <p class="project-desc">Landing page para clínica de estética avançada com agendamento online</p>
-        </div>
-        <div class="project-arrow">
-          <svg viewBox="0 0 14 14">
-            <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-      </a>
-
-      <a href="https://apex-perfomance.vercel.app/" target="_blank"
-        rel="noopener noreferrer" class="project-card" data-category="sites">
-        <img src="assets/apex_performance.png" alt="Apex Performance — Landing Page" class="project-thumb" loading="lazy">
-        <div class="project-info">
-          <span class="project-tag">Landing Page · Fitness</span>
-          <h3 class="project-name">Apex Performance</h3>
-          <p class="project-desc">Landing page para studio de alta performance com planos de treinamento</p>
-        </div>
-        <div class="project-arrow">
-          <svg viewBox="0 0 14 14">
-            <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-      </a>
-
-      <a href="https://www.behance.net/gallery/250502937/Redesign-Projeto-Vitrine" target="_blank"
-        rel="noopener noreferrer" class="project-card" data-category="sites">
-        <img src="assets/redesign_vitrine.png" alt="Redesign Projeto Vitrine" class="project-thumb" loading="lazy">
-        <div class="project-info">
-          <span class="project-tag">UX/UI · E-commerce</span>
-          <h3 class="project-name">Redesign Projeto Vitrine</h3>
-          <p class="project-desc">Estudo de caso e redesign completo da vitrine de produtos e-commerce</p>
-        </div>
-        <div class="project-arrow">
-          <svg viewBox="0 0 14 14">
-            <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-      </a>
-
-      <a href="https://www.behance.net/gallery/248353957/Chaozao" target="_blank" rel="noopener noreferrer"
-        class="project-card" data-category="ux-ui">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/808/3bc596248353957.Y3JvcCwxNjQ5LDEyOTAsMzc1LDA.png"
-          alt="Chãozão" class="project-thumb" loading="lazy">
-        <div class="project-info">
-          <span class="project-tag">UX/UI · Marketplace</span>
-          <h3 class="project-name">Chãozão</h3>
-          <p class="project-desc">Marketplace rural — auditoria e redesign de onboarding</p>
-        </div>
-        <div class="project-arrow">
-          <svg viewBox="0 0 14 14">
-            <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-      </a>
-
-      <a href="https://www.behance.net/gallery/232340665/Point-Sell" target="_blank" rel="noopener noreferrer"
-        class="project-card" data-category="ux-ui">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/808/117cf7232340665.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png"
-          alt="Point Sell" class="project-thumb" loading="lazy">
-        <div class="project-info">
-          <span class="project-tag">UI Design · POS</span>
-          <h3 class="project-name">Point Sell</h3>
-          <p class="project-desc">Sistema de ponto de venda com foco em usabilidade</p>
-        </div>
-        <div class="project-arrow">
-          <svg viewBox="0 0 14 14">
-            <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-      </a>
-
-      <a href="https://www.behance.net/gallery/232193999/Projeto-Vitrine" target="_blank" rel="noopener noreferrer"
-        class="project-card" data-category="sites">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/808/bac93e232193999.Y3JvcCwxMDA3LDc4OCwxOTcsMA.png"
-          alt="Projeto Vitrine" class="project-thumb" loading="lazy">
-        <div class="project-info">
-          <span class="project-tag">UI Design · E-commerce</span>
-          <h3 class="project-name">Projeto Vitrine</h3>
-          <p class="project-desc">Interface de vitrine de produtos para varejo</p>
-        </div>
-        <div class="project-arrow">
-          <svg viewBox="0 0 14 14">
-            <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-      </a>
-
-      <a href="https://www.behance.net/gallery/228987445/App-de-clima" target="_blank" rel="noopener noreferrer"
-        class="project-card" data-category="ux-ui">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/808/4040f3228987445.Y3JvcCwxMzgwLDEwODAsMjcwLDA.jpg"
-          alt="App de clima" class="project-thumb" loading="lazy">
-        <div class="project-info">
-          <span class="project-tag">Mobile · UX/UI</span>
-          <h3 class="project-name">App de Clima</h3>
-          <p class="project-desc">Aplicativo mobile de previsão do tempo</p>
-        </div>
-        <div class="project-arrow">
-          <svg viewBox="0 0 14 14">
-            <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-      </a>
-
-      <a href="https://www.behance.net/gallery/228151155/CRM-Connect" target="_blank" rel="noopener noreferrer"
-        class="project-card" data-category="ux-ui">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/808/dc2a39228151155.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png"
-          alt="CRM Connect" class="project-thumb" loading="lazy">
-        <div class="project-info">
-          <span class="project-tag">Product Design · B2B</span>
-          <h3 class="project-name">CRM Connect</h3>
-          <p class="project-desc">Plataforma de gestão de relacionamento com clientes</p>
-        </div>
-        <div class="project-arrow">
-          <svg viewBox="0 0 14 14">
-            <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-      </a>
-
-      <a href="https://www.behance.net/gallery/232331267/Cadastro-para-Observacao-no-Observatorio" target="_blank"
-        rel="noopener noreferrer" class="project-card" data-category="ux-ui">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/808/4dd40e232331267.Y3JvcCwxNzI1LDEzNTAsMzM3LDA.png"
-          alt="Cadastro Observatório" class="project-thumb" loading="lazy">
-        <div class="project-info">
-          <span class="project-tag">UX Design · Formulário</span>
-          <h3 class="project-name">Observatório</h3>
-          <p class="project-desc">Fluxo de cadastro para agendamento de observação</p>
-        </div>
-        <div class="project-arrow">
-          <svg viewBox="0 0 14 14">
-            <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-      </a>
-
-      <a href="https://github.com/Juniorgomesss" target="_blank" rel="noopener noreferrer"
-        class="project-card" data-category="github">
-        <div class="project-thumb" style="background: var(--bg2); display: flex; align-items: center; justify-content: center; opacity: 0.8;">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="width: 40%; height: auto; opacity: 0.3;">
-            <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0C17 5.8 18 6.1 18 6.1c.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.3v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3" />
-          </svg>
-        </div>
-        <div class="project-info">
-          <span class="project-tag">Código · Open Source</span>
-          <h3 class="project-name">Meu GitHub</h3>
-          <p class="project-desc">Acesse meu perfil para ver projetos de código, contribuições e repositórios</p>
-        </div>
-        <div class="project-arrow">
-          <svg viewBox="0 0 14 14">
-            <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ABOUT -->
-  <section class="section reveal" id="sobre">
-    <div class="section-header">
-      <span class="section-num">02 —</span>
-      <h2 class="section-title">Sobre mim</h2>
-    </div>
-
-    <div class="about-grid">
-      <div class="about-text">
-        <p>
-          Sou designer e desenvolvedor front-end com foco em criar <strong>sites e landing pages que convertem</strong>.
-          Trabalho do Figma ao deploy — o projeto sai como código real, responsivo e pronto para ir ao ar.
-        </p>
-        <p>
-          Cada trabalho começa pelo <strong>problema do negócio</strong>: o que a página precisa comunicar, quem vai
-          acessar e o que vai fazer esse visitante agir. Design bonito é consequência de uma estratégia bem pensada.
-        </p>
-        <p>
-          Já trabalhei em projetos para <strong>clínicas, studios de performance, e-commerce e plataformas B2B</strong>.
-          Se tem um negócio que precisa de presença digital com resultado, é exatamente o tipo de projeto que faço.
-        </p>
-        <div style="margin-top: 2rem;">
-          <a href="https://wa.me/5547999632936" target="_blank" rel="noopener noreferrer" class="btn-ghost">Solicitar
-            orçamento →</a>
-        </div>
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="hero reveal" id="home">
+      <span class="hero-tag">Designer & Desenvolvedor Front-end</span>
+      <h1>Seu próximo site, do <em>design</em> ao deploy.</h1>
+      <p class="hero-sub">
+        Crio sites e landing pages que convertem visitantes em clientes. Do Figma ao código — rápido, responsivo e pronto para ir ao ar.
+      </p>
+      <div class="hero-actions">
+        <a href="#projetos" class="btn-primary">Ver projetos</a>
+        <a href="https://wa.me/5547999632936" target="_blank" rel="noopener noreferrer" class="btn-ghost">Solicitar orçamento</a>
       </div>
-      <div class="about-photo-wrap">
-        <img src="assets/foto-junior.png" alt="Júnior Silva" class="about-photo">
-        <span class="about-tag-photo">Aceitando novos projetos</span>
-      </div>
-    </div>
-  </section>
 
-  <hr class="section-divider">
-
-  <!-- SKILLS -->
-  <section class="section reveal" id="skills">
-    <div class="section-header">
-      <span class="section-num">03 —</span>
-      <h2 class="section-title">Skills &amp; ferramentas</h2>
-    </div>
-
-    <div class="skills-grid">
-      <div class="skill-cell">
-        <div class="skill-icon">🎨</div>
-        <p class="skill-name">UX Design</p>
-        <p class="skill-desc">Pesquisa, heurísticas, fluxos e prototipagem</p>
-      </div>
-      <div class="skill-cell">
-        <div class="skill-icon">🖼️</div>
-        <p class="skill-name">UI Design</p>
-        <p class="skill-desc">Sistemas de design, componentes e consistência visual</p>
-      </div>
-      <div class="skill-cell">
-        <div class="skill-icon">✦</div>
-        <p class="skill-name">Figma</p>
-        <p class="skill-desc">Prototipagem interativa, auto-layout e handoff</p>
-      </div>
-      <div class="skill-cell">
-        <div class="skill-icon">⚛</div>
-        <p class="skill-name">React</p>
-        <p class="skill-desc">Componentes, hooks e interfaces dinâmicas</p>
-      </div>
-      <div class="skill-cell">
-        <div class="skill-icon">&lt;/&gt;</div>
-        <p class="skill-name">HTML &amp; CSS</p>
-        <p class="skill-desc">Markup semântico, responsividade e animações</p>
-      </div>
-      <div class="skill-cell">
-        <div class="skill-icon">JS</div>
-        <p class="skill-name">JavaScript</p>
-        <p class="skill-desc">Interatividade, lógica de UI e consumo de APIs</p>
-      </div>
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- CONTACT -->
-  <section class="section reveal">
-    <div class="contact-card">
-      <h2>Tem um projeto em mente?</h2>
-      <p>Conte o que precisa e receba um orçamento sem compromisso. Respondo em até 24h.</p>
-      <div class="contact-actions">
-        <a href="mailto:juniorgomesdasilva9@gmail.com" class="contact-link" aria-label="Enviar E-mail">
-          E-mail
+      <div class="social-row">
+        <a href="https://github.com/Juniorgomesss" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Acessar GitHub de Júnior Silva">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.2-3.1 0 0 1-.3 3.2 1.2 1-.3 2-.4 3-.4 1 0 2 .1 3 .4 2.2-1.5 3.2-1.2 3.2-1.2.7 1.6.3 2.8.2 3.1.7.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z" />
+          </svg>
+          GitHub
         </a>
-        <a href="https://wa.me/5547999632936" target="_blank" rel="noopener noreferrer" class="contact-link"
-          aria-label="Enviar mensagem no WhatsApp">
-          WhatsApp
-        </a>
-        <a href="https://www.linkedin.com/in/juniorgomesdasilva/" target="_blank" rel="noopener noreferrer"
-          class="contact-link outline" aria-label="Acessar LinkedIn">
+        <a href="https://www.linkedin.com/in/juniorgomesdasilva/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Acessar LinkedIn de Júnior Silva">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.45v6.291zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
           LinkedIn
-          <svg viewBox="0 0 15 15">
-            <path d="M2 13 13 2M13 2H6M13 2v7" stroke-linecap="round" stroke-linejoin="round" />
+        </a>
+        <a href="https://www.behance.net/juniorgomess" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Acessar Behance de Júnior Silva">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.201.738 2.126 2.224 2.126 1.582 0 1.961-.854 2.261-1.346h1.903c-.519 1.465-2.180 2.487-4.235 2.487l-.022.064zm-7.564-4.18h4.718c-.443-1.028-1.231-1.62-2.374-1.62-1.393 0-2.343.757-2.344 1.62z" />
           </svg>
+          Behance
         </a>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <hr class="section-divider" aria-hidden="true">
+
+    <!-- PROJECTS -->
+    <section class="section reveal" id="projetos">
+      <div class="section-header">
+        <span class="section-num" aria-hidden="true">01 —</span>
+        <h2 class="section-title">Projetos selecionados</h2>
+      </div>
+
+      <div class="project-tabs" role="tablist">
+        <button class="tab-btn active" data-filter="all" role="tab" aria-selected="true" aria-label="Mostrar todos os projetos">Todos</button>
+        <button class="tab-btn" data-filter="ux-ui" role="tab" aria-selected="false" aria-label="Filtrar por projetos UX/UI">UX/UI</button>
+        <button class="tab-btn" data-filter="sites" role="tab" aria-selected="false" aria-label="Filtrar por landing pages e sites">LP's / Sites</button>
+        <button class="tab-btn" data-filter="github" role="tab" aria-selected="false" aria-label="Ver projetos no GitHub">Git Hub</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <a href="https://lumina-estetica-jet.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card" data-category="sites">
+          <img src="assets/lumina_estetica.png" alt="Lumina Estética — Landing Page para clínica de estética" class="project-thumb" loading="lazy" width="320" height="240">
+          <div class="project-info">
+            <span class="project-tag">Landing Page · Estética</span>
+            <h3 class="project-name">Lumina Estética</h3>
+            <p class="project-desc">Landing page para clínica de estética avançada com agendamento online</p>
+          </div>
+          <div class="project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 14 14">
+              <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://apex-perfomance.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card" data-category="sites">
+          <img src="assets/apex_performance.png" alt="Apex Performance — Landing Page para studio de alta performance" class="project-thumb" loading="lazy" width="320" height="240">
+          <div class="project-info">
+            <span class="project-tag">Landing Page · Fitness</span>
+            <h3 class="project-name">Apex Performance</h3>
+            <p class="project-desc">Landing page para studio de alta performance com planos de treinamento</p>
+          </div>
+          <div class="project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 14 14">
+              <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/250502937/Redesign-Projeto-Vitrine" target="_blank" rel="noopener noreferrer" class="project-card" data-category="sites">
+          <img src="assets/redesign_vitrine.png" alt="Redesign Projeto Vitrine — Estudo de caso e redesign de e-commerce" class="project-thumb" loading="lazy" width="320" height="240">
+          <div class="project-info">
+            <span class="project-tag">UX/UI · E-commerce</span>
+            <h3 class="project-name">Redesign Projeto Vitrine</h3>
+            <p class="project-desc">Estudo de caso e redesign completo da vitrine de produtos e-commerce</p>
+          </div>
+          <div class="project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 14 14">
+              <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/248353957/Chaozao" target="_blank" rel="noopener noreferrer" class="project-card" data-category="ux-ui">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/808/3bc596248353957.Y3JvcCwxNjQ5LDEyOTAsMzc1LDA.png" alt="Chãozão — Marketplace rural com auditoria e redesign de onboarding" class="project-thumb" loading="lazy" width="320" height="240">
+          <div class="project-info">
+            <span class="project-tag">UX/UI · Marketplace</span>
+            <h3 class="project-name">Chãozão</h3>
+            <p class="project-desc">Marketplace rural — auditoria e redesign de onboarding</p>
+          </div>
+          <div class="project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 14 14">
+              <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/232340665/Point-Sell" target="_blank" rel="noopener noreferrer" class="project-card" data-category="ux-ui">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/808/117cf7232340665.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png" alt="Point Sell — Sistema de ponto de venda com foco em usabilidade" class="project-thumb" loading="lazy" width="320" height="240">
+          <div class="project-info">
+            <span class="project-tag">UI Design · POS</span>
+            <h3 class="project-name">Point Sell</h3>
+            <p class="project-desc">Sistema de ponto de venda com foco em usabilidade</p>
+          </div>
+          <div class="project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 14 14">
+              <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/232193999/Projeto-Vitrine" target="_blank" rel="noopener noreferrer" class="project-card" data-category="sites">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/808/bac93e232193999.Y3JvcCwxMDA3LDc4OCwxOTcsMA.png" alt="Projeto Vitrine — Interface de vitrine de produtos para varejo" class="project-thumb" loading="lazy" width="320" height="240">
+          <div class="project-info">
+            <span class="project-tag">UI Design · E-commerce</span>
+            <h3 class="project-name">Projeto Vitrine</h3>
+            <p class="project-desc">Interface de vitrine de produtos para varejo</p>
+          </div>
+          <div class="project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 14 14">
+              <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/228987445/App-de-clima" target="_blank" rel="noopener noreferrer" class="project-card" data-category="ux-ui">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/808/4040f3228987445.Y3JvcCwxMzgwLDEwODAsMjcwLDA.jpg" alt="App de clima — Aplicativo mobile de previsão do tempo" class="project-thumb" loading="lazy" width="320" height="240">
+          <div class="project-info">
+            <span class="project-tag">Mobile · UX/UI</span>
+            <h3 class="project-name">App de Clima</h3>
+            <p class="project-desc">Aplicativo mobile de previsão do tempo</p>
+          </div>
+          <div class="project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 14 14">
+              <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/228151155/CRM-Connect" target="_blank" rel="noopener noreferrer" class="project-card" data-category="ux-ui">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/808/dc2a39228151155.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png" alt="CRM Connect — Plataforma de gestão de relacionamento com clientes" class="project-thumb" loading="lazy" width="320" height="240">
+          <div class="project-info">
+            <span class="project-tag">Product Design · B2B</span>
+            <h3 class="project-name">CRM Connect</h3>
+            <p class="project-desc">Plataforma de gestão de relacionamento com clientes</p>
+          </div>
+          <div class="project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 14 14">
+              <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/232331267/Cadastro-para-Observacao-no-Observatorio" target="_blank" rel="noopener noreferrer" class="project-card" data-category="ux-ui">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/808/4dd40e232331267.Y3JvcCwxNzI1LDEzNTAsMzM3LDA.png" alt="Observatório — Fluxo de cadastro para agendamento de observação" class="project-thumb" loading="lazy" width="320" height="240">
+          <div class="project-info">
+            <span class="project-tag">UX Design · Formulário</span>
+            <h3 class="project-name">Observatório</h3>
+            <p class="project-desc">Fluxo de cadastro para agendamento de observação</p>
+          </div>
+          <div class="project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 14 14">
+              <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://github.com/Juniorgomesss" target="_blank" rel="noopener noreferrer" class="project-card" data-category="github">
+          <div class="project-thumb" style="background: var(--bg2); display: flex; align-items: center; justify-content: center; opacity: 0.8;">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width: 40%; height: auto; opacity: 0.3;" aria-hidden="true">
+              <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.2-3.1 0 0 1-.3 3.2 1.2 1-.3 2-.4 3-.4 1 0 2 .1 3 .4 2.2-1.5 3.2-1.2 3.2-1.2.7 1.6.3 2.8.2 3.1.7.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z" />
+            </svg>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Código · Open Source</span>
+            <h3 class="project-name">Meu GitHub</h3>
+            <p class="project-desc">Acesse meu perfil para ver projetos de código, contribuições e repositórios</p>
+          </div>
+          <div class="project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 14 14">
+              <path d="M2 12 12 2M12 2H5M12 2v7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <hr class="section-divider" aria-hidden="true">
+
+    <!-- ABOUT -->
+    <section class="section reveal" id="sobre">
+      <div class="section-header">
+        <span class="section-num" aria-hidden="true">02 —</span>
+        <h2 class="section-title">Sobre mim</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Sou designer e desenvolvedor front-end com foco em criar <strong>sites e landing pages que convertem</strong>.
+            Trabalho do Figma ao deploy — o projeto sai como código real, responsivo e pronto para ir ao ar.
+          </p>
+          <p>
+            Cada trabalho começa pelo <strong>problema do negócio</strong>: o que a página precisa comunicar, quem vai
+            acessar e o que vai fazer esse visitante agir. Design bonito é consequência de uma estratégia bem pensada.
+          </p>
+          <p>
+            Já trabalhei em projetos para <strong>clínicas, studios de performance, e-commerce e plataformas B2B</strong>.
+            Se tem um negócio que precisa de presença digital com resultado, é exatamente o tipo de projeto que faço.
+          </p>
+          <div style="margin-top: 2rem;">
+            <a href="https://wa.me/5547999632936" target="_blank" rel="noopener noreferrer" class="btn-ghost">Solicitar orçamento →</a>
+          </div>
+        </div>
+        <div class="about-photo-wrap">
+          <img src="assets/foto-junior.png" alt="Fotografia de Júnior Silva, designer e desenvolvedor front-end" class="about-photo" loading="lazy" width="300" height="400">
+          <span class="about-tag-photo">Aceitando novos projetos</span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" aria-hidden="true">
+
+    <!-- SKILLS -->
+    <section class="section reveal" id="skills">
+      <div class="section-header">
+        <span class="section-num" aria-hidden="true">03 —</span>
+        <h2 class="section-title">Skills &amp; ferramentas</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-cell">
+          <div class="skill-icon" aria-hidden="true">🎨</div>
+          <p class="skill-name">UX Design</p>
+          <p class="skill-desc">Pesquisa, heurísticas, fluxos e prototipagem</p>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-icon" aria-hidden="true">🖼️</div>
+          <p class="skill-name">UI Design</p>
+          <p class="skill-desc">Sistemas de design, componentes e consistência visual</p>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-icon" aria-hidden="true">✦</div>
+          <p class="skill-name">Figma</p>
+          <p class="skill-desc">Prototipagem interativa, auto-layout e handoff</p>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-icon" aria-hidden="true">⚛</div>
+          <p class="skill-name">React</p>
+          <p class="skill-desc">Componentes, hooks e interfaces dinâmicas</p>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-icon" aria-hidden="true">&lt;/&gt;</div>
+          <p class="skill-name">HTML &amp; CSS</p>
+          <p class="skill-desc">Markup semântico, responsividade e animações</p>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-icon" aria-hidden="true">JS</div>
+          <p class="skill-name">JavaScript</p>
+          <p class="skill-desc">Interatividade, lógica de UI e consumo de APIs</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" aria-hidden="true">
+
+    <!-- CONTACT -->
+    <section class="section reveal">
+      <div class="contact-card">
+        <h2>Tem um projeto em mente?</h2>
+        <p>Conte o que precisa e receba um orçamento sem compromisso. Respondo em até 24h.</p>
+        <div class="contact-actions">
+          <a href="mailto:juniorgomesdasilva9@gmail.com" class="contact-link" aria-label="Enviar E-mail para Júnior Silva">
+            E-mail
+          </a>
+          <a href="https://wa.me/5547999632936" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Enviar mensagem no WhatsApp">
+            WhatsApp
+          </a>
+          <a href="https://www.linkedin.com/in/juniorgomesdasilva/" target="_blank" rel="noopener noreferrer" class="contact-link outline" aria-label="Acessar LinkedIn de Júnior Silva">
+            LinkedIn
+            <svg viewBox="0 0 15 15" aria-hidden="true">
+              <path d="M2 13 13 2M13 2H6M13 2v7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer role="contentinfo">
     <p class="footer-copy">© 2026 Júnior Silva. Design & código por Júnior Silva.</p>
     <div class="footer-links">
-      <a href="https://github.com/Juniorgomesss" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/juniorgomesdasilva/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://www.behance.net/juniorgomess" target="_blank" rel="noopener noreferrer">Behance</a>
+      <a href="https://github.com/Juniorgomesss" target="_blank" rel="noopener noreferrer" aria-label="Acessar GitHub">GitHub</a>
+      <a href="https://www.linkedin.com/in/juniorgomesdasilva/" target="_blank" rel="noopener noreferrer" aria-label="Acessar LinkedIn">LinkedIn</a>
+      <a href="https://www.behance.net/juniorgomess" target="_blank" rel="noopener noreferrer" aria-label="Acessar Behance">Behance</a>
     </div>
   </footer>
 
-  <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo">
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+  <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo da página">
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Júnior Silva",
+    "jobTitle": "Designer & Front-end Developer",
+    "email": "juniorgomesdasilva9@gmail.com",
+    "url": "https://portfolio-livid-gamma-fvsa9m5si3.vercel.app/",
+    "image": "https://portfolio-livid-gamma-fvsa9m5si3.vercel.app/assets/foto-junior.png",
+    "sameAs": [
+      "https://github.com/Juniorgomesss",
+      "https://www.linkedin.com/in/juniorgomesdasilva/",
+      "https://www.behance.net/juniorgomess"
+    ],
+    "knowsAbout": [
+      "UX Design",
+      "UI Design",
+      "Front-end Development",
+      "Landing Pages",
+      "Responsive Design",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Figma"
+    ]
+  }
+  </script>
 
 </body>
 

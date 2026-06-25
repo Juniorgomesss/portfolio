@@ -1,0 +1,9 @@
+# Allow all bots
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /?*
+Disallow: /*?*
+
+# Sitemaps
+Sitemap: https://portfolio-livid-gamma-fvsa9m5si3.vercel.app/sitemap.xml
