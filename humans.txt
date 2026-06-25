@@ -1,0 +1,14 @@
+/* TEAM */
+  Name: Júnior Silva
+  Title: Designer & Front-end Developer
+  Email: juniorgomesdasilva9@gmail.com
+  Website: https://portfolio-livid-gamma-fvsa9m5si3.vercel.app
+  GitHub: https://github.com/Juniorgomesss
+  LinkedIn: https://www.linkedin.com/in/juniorgomesdasilva/
+  Behance: https://www.behance.net/juniorgomess
+
+/* SITE */
+  Standards: HTML5, CSS3, JavaScript ES6
+  Hosting: Vercel
+  Components: Vanilla JS, No frameworks
+  Last Update: 2026-06-25

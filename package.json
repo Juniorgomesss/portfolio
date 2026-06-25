@@ -1,0 +1,26 @@
+{
+  "name": "junior-silva-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio of Júnior Silva - Designer & Front-end Developer",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Static site - no build step needed'",
+    "minify:css": "npx csso style.css --output style.min.css",
+    "minify:js": "npx terser script.js --output script.min.js -c -m"
+  },
+  "keywords": [
+    "portfolio",
+    "designer",
+    "front-end",
+    "landing-page",
+    "ux-ui"
+  ],
+  "author": "Júnior Silva <juniorgomesdasilva9@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "csso": "^5.1.0",
+    "terser": "^5.30.0"
+  }
+}
