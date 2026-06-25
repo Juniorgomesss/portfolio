@@ -20,7 +20,7 @@
   "author": "Júnior Silva <juniorgomesdasilva9@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "csso": "^5.1.0",
+    "csso-cli": "^4.0.2",
     "terser": "^5.30.0"
   }
 }
