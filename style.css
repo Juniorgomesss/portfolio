@@ -100,7 +100,7 @@
       -webkit-backdrop-filter: blur(18px) saturate(1.4);
       background: rgba(37, 37, 37, 0.3);
       transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: width, height, top, background-color, border-radius;
+      will-change: transform;
     }
 
     nav.scrolled {
