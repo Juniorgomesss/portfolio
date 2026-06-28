@@ -56,6 +56,28 @@
       overflow-x: hidden;
     }
 
+    /* ─── SKIP LINK (Accessibility) ─── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      z-index: 9999;
+      background: var(--accent);
+      color: #fff;
+      padding: .6rem 1.2rem;
+      border-radius: var(--r);
+      font-size: .85rem;
+      font-weight: 500;
+      text-decoration: none;
+      opacity: 0;
+      transition: top .2s, opacity .2s;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+      opacity: 1;
+    }
+
     /* ─── GRAIN OVERLAY ─── */
     body::before {
       content: '';
