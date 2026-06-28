@@ -358,6 +358,60 @@
       color: var(--bg);
     }
 
+    /* ─── WHATSAPP CTA ─── */
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: #25D366;
+      color: #ffffff;
+      padding: .75rem 1.75rem;
+      border-radius: var(--r);
+      font-size: .875rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: .02em;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-whatsapp svg {
+      flex-shrink: 0;
+    }
+
+    .btn-whatsapp--hero {
+      padding: .9rem 2.2rem;
+      font-size: .95rem;
+    }
+
+    /* WhatsApp in contact section */
+    .whatsapp-primary {
+      background: #25D366 !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
+    }
+
+    .whatsapp-primary:hover {
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-primary svg {
+      fill: #ffffff;
+    }
+
+    .contact-hint {
+      font-size: .8rem;
+      color: var(--muted);
+      margin-top: 1.5rem;
+      font-weight: 300;
+      position: relative;
+    }
+
     /* ─── SOCIAL ROW ─── */
     .social-row {
       display: flex;
@@ -639,7 +693,103 @@
       backdrop-filter: blur(12px);
     }
 
-    /* ─── SKILLS ─── */
+    /* ─── PROCESS ─── */
+    .process-grid {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    .process-step {
+      flex: 1;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+    }
+
+    .process-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-mid);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      transition: all .3s ease;
+    }
+
+    .process-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--accent);
+    }
+
+    .process-step:hover .process-icon {
+      background: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .process-step:hover .process-icon svg {
+      color: #fff;
+    }
+
+    .process-num {
+      font-family: var(--serif);
+      font-size: .7rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: .1em;
+      display: block;
+      margin-bottom: .5rem;
+    }
+
+    .process-title {
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .6rem;
+    }
+
+    .process-desc {
+      font-size: .82rem;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .process-connector {
+      width: 40px;
+      min-width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-mid), var(--accent), var(--accent-mid));
+      margin-top: 4.75rem;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .process-connector::after {
+      content: '';
+      position: absolute;
+      right: -3px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .process-cta {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    /* ─── SKILLS / BENEFÍCIOS ─── */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -654,6 +804,7 @@
       background: var(--bg);
       padding: 1.75rem 1.5rem;
       transition: background .2s;
+      cursor: default;
     }
 
     .skill-cell:hover {
@@ -681,8 +832,38 @@
 
     .skill-desc {
       font-size: .75rem;
-      color: var(--text);
       font-weight: 300;
+      line-height: 1.5;
+      transition: opacity .3s ease, transform .3s ease;
+    }
+
+    .skill-benefit {
+      color: var(--text);
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill-technical {
+      color: var(--accent);
+      font-size: .7rem;
+      font-weight: 400;
+      letter-spacing: .02em;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transform: translateY(-4px);
+      transition: opacity .3s ease, transform .3s ease, max-height .3s ease;
+    }
+
+    .skill-cell:hover .skill-benefit {
+      opacity: .5;
+    }
+
+    .skill-cell:hover .skill-technical {
+      opacity: 1;
+      max-height: 60px;
+      transform: translateY(0);
+      margin-top: .35rem;
     }
 
     /* ─── CONTACT ─── */
@@ -1000,6 +1181,43 @@
 
       .contact-card {
         padding: 2.5rem 1.5rem;
+      }
+
+      /* Process responsive */
+      .process-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .process-step {
+        padding: 1.5rem 1rem;
+      }
+
+      .process-connector {
+        width: 2px;
+        min-width: 2px;
+        height: 30px;
+        margin-top: 0;
+        background: linear-gradient(180deg, var(--accent-mid), var(--accent), var(--accent-mid));
+      }
+
+      .process-connector::after {
+        right: 50%;
+        top: auto;
+        bottom: -3px;
+        transform: translateX(50%);
+      }
+
+      /* Skills responsive - show technical on mobile */
+      .skill-technical {
+        opacity: 1;
+        max-height: 60px;
+        transform: translateY(0);
+        margin-top: .35rem;
+      }
+
+      .skill-benefit {
+        opacity: .7;
       }
 
       footer {
